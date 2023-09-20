@@ -19,6 +19,7 @@ public class TelaInicial extends javax.swing.JFrame {
         initComponents();
         System.out.println("Funcionou");
         //netbeans pro git
+        //git pro netbeans
     }
 
     /**
