@@ -677,6 +677,7 @@ public class Jogo extends javax.swing.JFrame {
         else{
 
         posicionarPlayer();
+        IniciarB.setEnabled(false);
         }
         }
         catch(StringIndexOutOfBoundsException ex){
