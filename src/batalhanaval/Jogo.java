@@ -750,6 +750,12 @@ public class Jogo extends javax.swing.JFrame {
                 }
             }
 
+            //<desativar botões Fragata>
+            
+            Ffragata.setEnabled(false);
+            Hfragata.setEnabled(false);
+            Vfragata.setEnabled(false);
+            
         } catch (ArrayIndexOutOfBoundsException ex) {
             JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
