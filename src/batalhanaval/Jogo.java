@@ -634,62 +634,77 @@ public class Jogo extends javax.swing.JFrame {
         //<definir cor>
         Color cor = new java.awt.Color(0, 255, 0);
 
-        //<Posicionar PortaAviao>
-        //<horizontalmente>
-        if (HportaA.isSelected()) {
+        try {
+            //<Posicionar PortaAviao>
+            //<horizontalmente>
+            if (HportaA.isSelected()) {
 
-            //<validar pos>
-            if (cPortaAviao < 8) {
-                mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao][cPortaAviao].setBackground(cor);
-                mp1[lPortaAviao][cPortaAviao + 1].setBackground(cor);
-                mp1[lPortaAviao][cPortaAviao + 2].setBackground(cor);
-            } else {
-                mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao][cPortaAviao - 2].setBackground(cor);
-                mp1[lPortaAviao][cPortaAviao - 3].setBackground(cor);
-                mp1[lPortaAviao][cPortaAviao - 4].setBackground(cor);
-            }
-        } //<verticalmente>
-        else {
-
-            //<validar pos>
-            if (lPortaAviao < 2) {
-                mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao + 1][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao + 2][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao + 3][cPortaAviao - 1].setBackground(cor);
-            }
-            if (lPortaAviao == 2) {
-                mp1[lPortaAviao - 1][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao + 1][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao + 2][cPortaAviao - 1].setBackground(cor);
-            }
-            if (lPortaAviao > 2) {
-                mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao - 1][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao - 2][cPortaAviao - 1].setBackground(cor);
-                mp1[lPortaAviao - 3][cPortaAviao - 1].setBackground(cor);
-            }
-        }
-        FportaAvioes.setEnabled(false);
-        HportaA.setEnabled(false);
-        VportaA.setEnabled(false);
-
-        //<Posicionar Fragata>
-        //<Horizontalmente>
-        if (Hfragata.isSelected()) {
-
-            //<Validar pos>
-            if (cFragata < 9) {
-                if (mp1[lFragata][cFragata].getBackground().getRed() == 255
-                        && mp1[lFragata][cFragata + 1].getBackground().getRed() == 255) {
-                    mp1[lFragata][cFragata - 1].setBackground(cor);
-                    mp1[lFragata][cFragata].setBackground(cor);
-                    mp1[lFragata][cFragata + 1].setBackground(cor);
+                //<validar pos>
+                if (cPortaAviao < 8) {
+                    mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao][cPortaAviao].setBackground(cor);
+                    mp1[lPortaAviao][cPortaAviao + 1].setBackground(cor);
+                    mp1[lPortaAviao][cPortaAviao + 2].setBackground(cor);
                 } else {
-                    if (mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
+                    mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao][cPortaAviao - 2].setBackground(cor);
+                    mp1[lPortaAviao][cPortaAviao - 3].setBackground(cor);
+                    mp1[lPortaAviao][cPortaAviao - 4].setBackground(cor);
+                }
+            } //<verticalmente>
+            else {
+
+                //<validar pos>
+                if (lPortaAviao < 2) {
+                    mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao + 1][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao + 2][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao + 3][cPortaAviao - 1].setBackground(cor);
+                }
+                if (lPortaAviao == 2) {
+                    mp1[lPortaAviao - 1][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao + 1][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao + 2][cPortaAviao - 1].setBackground(cor);
+                }
+                if (lPortaAviao > 2) {
+                    mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao - 1][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao - 2][cPortaAviao - 1].setBackground(cor);
+                    mp1[lPortaAviao - 3][cPortaAviao - 1].setBackground(cor);
+                }
+            }
+            FportaAvioes.setEnabled(false);
+            HportaA.setEnabled(false);
+            VportaA.setEnabled(false);
+
+            //<Posicionar Fragata>
+            //<Horizontalmente>
+            if (Hfragata.isSelected()) {
+
+                //<Validar pos>
+                if (cFragata < 9) {
+                    if (mp1[lFragata][cFragata].getBackground().getRed() == 255
+                            && mp1[lFragata][cFragata + 1].getBackground().getRed() == 255
+                            && mp1[lFragata][cFragata - 1].getBackground().getRed() == 255) {
+                        mp1[lFragata][cFragata - 1].setBackground(cor);
+                        mp1[lFragata][cFragata].setBackground(cor);
+                        mp1[lFragata][cFragata + 1].setBackground(cor);
+                    } else {
+                        if (mp1[lFragata][cFragata + 1].getBackground().getRed() == 255
+                                && mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
+                                && mp1[lFragata][cFragata - 3].getBackground().getRed() == 255) {
+                            mp1[lFragata][cFragata - 1].setBackground(cor);
+                            mp1[lFragata][cFragata - 2].setBackground(cor);
+                            mp1[lFragata][cFragata - 3].setBackground(cor);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
+                            return;
+                        }
+                    }
+                } else {
+                    if (mp1[lFragata][cFragata - 1].getBackground().getRed() == 255
+                            && mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
                             && mp1[lFragata][cFragata - 3].getBackground().getRed() == 255) {
                         mp1[lFragata][cFragata - 1].setBackground(cor);
                         mp1[lFragata][cFragata - 2].setBackground(cor);
@@ -699,20 +714,46 @@ public class Jogo extends javax.swing.JFrame {
                         return;
                     }
                 }
+                //<verticalmente>
             } else {
-                if (mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
-                        && mp1[lFragata][cFragata - 3].getBackground().getRed() == 255) {
-                    mp1[lFragata][cFragata - 1].setBackground(cor);
-                    mp1[lFragata][cFragata - 2].setBackground(cor);
-                    mp1[lFragata][cFragata - 3].setBackground(cor);
-                }
-                else {
+                //<validar pos>
+                if (lFragata < 3) {
+                    if (mp1[lFragata][cFragata - 1].getBackground().getRed() == 255
+                            && mp1[lFragata + 1][cFragata - 1].getBackground().getRed() == 255
+                            && mp1[lFragata + 2][cFragata - 1].getBackground().getRed() == 255) {
+                        mp1[lFragata][cFragata - 1].setBackground(cor);
+                        mp1[lFragata + 1][cFragata - 1].setBackground(cor);
+                        mp1[lFragata + 2][cFragata - 1].setBackground(cor);
+                    } else {
+                        if (mp1[lFragata][cFragata - 1].getBackground().getRed() == 255
+                                && mp1[lFragata - 1][cFragata - 1].getBackground().getRed() == 255
+                                && mp1[lFragata - 2][cFragata - 1].getBackground().getRed() == 255) {
+                            mp1[lFragata][cFragata - 1].setBackground(cor);
+                            mp1[lFragata - 1][cFragata - 1].setBackground(cor);
+                            mp1[lFragata - 2][cFragata - 1].setBackground(cor);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
+                            return;
+                        }
+                    }
+                } else {
+                    if (mp1[lFragata - 1][cFragata - 1].getBackground().getRed() == 255
+                            && mp1[lFragata - 1][cFragata - 1].getBackground().getRed() == 255
+                            && mp1[lFragata - 2][cFragata - 1].getBackground().getRed() == 255) {
+                        mp1[lFragata][cFragata - 1].setBackground(cor);
+                        mp1[lFragata - 1][cFragata - 1].setBackground(cor);
+                        mp1[lFragata - 2][cFragata - 1].setBackground(cor);
+                    } else {
                         JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
                         return;
                     }
+                }
             }
-        }
 
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
     }
 
     private int letraParaNumero(String var) {
