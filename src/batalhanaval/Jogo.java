@@ -592,11 +592,11 @@ public class Jogo extends javax.swing.JFrame {
             String LcPortaAviao = pPortaAviao.substring(0, 1);
             String LlPortaAviao = pPortaAviao.substring(1, pPortaAviao.length());
 
-            String LcFragata = pPortaAviao.substring(0, 1);
-            String LlFragata = pPortaAviao.substring(1, pFragata.length());
+            String LcFragata = pFragata.substring(0, 1);
+            String LlFragata = pFragata.substring(1, pFragata.length());
 
-            String LcCruzador = pPortaAviao.substring(0, 1);
-            String LlCruzador = pPortaAviao.substring(1, pCruzador.length());
+            String LcCruzador = pFragata.substring(0, 1);
+            String LlCruzador = pFragata.substring(1, pCruzador.length());
 
             //<Transformar para inteiro>
             int lPortaAviao = letraParaNumero(LcPortaAviao);
@@ -619,7 +619,7 @@ public class Jogo extends javax.swing.JFrame {
             }
 
             //<desenhar quadrados>
-            drawSquare(lPortaAviao, cPortaAviao);
+            drawSquare(lPortaAviao, cPortaAviao, lFragata, cFragata);
 
             //<catch>
         } catch (NumberFormatException ex) {
@@ -629,7 +629,7 @@ public class Jogo extends javax.swing.JFrame {
 
     }
 
-    private void drawSquare(int lPortaAviao, int cPortaAviao) {
+    private void drawSquare(int lPortaAviao, int cPortaAviao, int lFragata, int cFragata) {
 
         //<definir cor>
         Color cor = new java.awt.Color(0, 255, 0);
@@ -676,6 +676,43 @@ public class Jogo extends javax.swing.JFrame {
         FportaAvioes.setEnabled(false);
         HportaA.setEnabled(false);
         VportaA.setEnabled(false);
+
+        //<Posicionar Fragata>
+        //<Horizontalmente>
+        if (Hfragata.isSelected()) {
+
+            //<Validar pos>
+            if (cFragata < 9) {
+                if (mp1[lFragata][cFragata].getBackground().getRed() == 255
+                        && mp1[lFragata][cFragata + 1].getBackground().getRed() == 255) {
+                    mp1[lFragata][cFragata - 1].setBackground(cor);
+                    mp1[lFragata][cFragata].setBackground(cor);
+                    mp1[lFragata][cFragata + 1].setBackground(cor);
+                } else {
+                    if (mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
+                            && mp1[lFragata][cFragata - 3].getBackground().getRed() == 255) {
+                        mp1[lFragata][cFragata - 1].setBackground(cor);
+                        mp1[lFragata][cFragata - 2].setBackground(cor);
+                        mp1[lFragata][cFragata - 3].setBackground(cor);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }
+            } else {
+                if (mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
+                        && mp1[lFragata][cFragata - 3].getBackground().getRed() == 255) {
+                    mp1[lFragata][cFragata - 1].setBackground(cor);
+                    mp1[lFragata][cFragata - 2].setBackground(cor);
+                    mp1[lFragata][cFragata - 3].setBackground(cor);
+                }
+                else {
+                        JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+            }
+        }
+
     }
 
     private int letraParaNumero(String var) {
