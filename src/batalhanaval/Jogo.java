@@ -29,10 +29,10 @@ public class Jogo extends javax.swing.JFrame {
                 javax.swing.JPanel quadrado2 = new javax.swing.JPanel();
                 quadrado1 = CriarQuadrados1(c, l);
                 quadrado2 = CriarQuadrados2(c, l);
-                Fundo.add(quadrado1);
-                Fundo.add(quadrado2);
-                mp1[l][c] = quadrado1;
-                mp2[l][c] = quadrado2;
+                this.Fundo.add(quadrado1);
+                this.Fundo.add(quadrado2);
+                this.mp1[l][c] = quadrado1;
+                this.mp2[l][c] = quadrado2;
             }
         }
     }
@@ -578,9 +578,9 @@ public class Jogo extends javax.swing.JFrame {
     private void posicionarPlayer() {
 
         try {
-            String pPortaAviao = FportaAvioes.getText();
-            String pFragata = Ffragata.getText();
-            String pCruzador = Fcruzador.getText();
+            String pPortaAviao = this.FportaAvioes.getText();
+            String pFragata = this.Ffragata.getText();
+            String pCruzador = this.Fcruzador.getText();
 
             if (pPortaAviao.equals(pFragata) || pPortaAviao.equals(pCruzador)
                     || pFragata.equals(pCruzador)) {
@@ -637,14 +637,14 @@ public class Jogo extends javax.swing.JFrame {
         try {
             //<Posicionar PortaAviao>
             //<horizontalmente>
-            if (HportaA.isSelected()) {
+            if (this.HportaA.isSelected()) {
 
                 //<validar pos>
                 if (cPortaAviao < 8) {
-                    mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao][cPortaAviao].setBackground(cor);
-                    mp1[lPortaAviao][cPortaAviao + 1].setBackground(cor);
-                    mp1[lPortaAviao][cPortaAviao + 2].setBackground(cor);
+                    this.mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao][cPortaAviao].setBackground(cor);
+                    this.mp1[lPortaAviao][cPortaAviao + 1].setBackground(cor);
+                    this.mp1[lPortaAviao][cPortaAviao + 2].setBackground(cor);
                 } else {
                     mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
                     mp1[lPortaAviao][cPortaAviao - 2].setBackground(cor);
@@ -656,59 +656,59 @@ public class Jogo extends javax.swing.JFrame {
 
                 //<validar pos>
                 if (lPortaAviao < 2) {
-                    mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao + 1][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao + 2][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao + 3][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao + 1][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao + 2][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao + 3][cPortaAviao - 1].setBackground(cor);
                 }
                 if (lPortaAviao == 2) {
-                    mp1[lPortaAviao - 1][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao + 1][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao + 2][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao - 1][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao + 1][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao + 2][cPortaAviao - 1].setBackground(cor);
                 }
                 if (lPortaAviao > 2) {
-                    mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao - 1][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao - 2][cPortaAviao - 1].setBackground(cor);
-                    mp1[lPortaAviao - 3][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao - 1][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao - 2][cPortaAviao - 1].setBackground(cor);
+                    this.mp1[lPortaAviao - 3][cPortaAviao - 1].setBackground(cor);
                 }
             }
-            FportaAvioes.setEnabled(false);
-            HportaA.setEnabled(false);
-            VportaA.setEnabled(false);
+            this.FportaAvioes.setEnabled(false);
+            this.HportaA.setEnabled(false);
+            this.VportaA.setEnabled(false);
 
             //<Posicionar Fragata>
             //<Horizontalmente>
-            if (Hfragata.isSelected()) {
+            if (this.Hfragata.isSelected()) {
 
                 //<Validar pos>
                 if (cFragata < 9) {
-                    if (mp1[lFragata][cFragata].getBackground().getRed() == 255
-                            && mp1[lFragata][cFragata + 1].getBackground().getRed() == 255
-                            && mp1[lFragata][cFragata - 1].getBackground().getRed() == 255) {
-                        mp1[lFragata][cFragata - 1].setBackground(cor);
-                        mp1[lFragata][cFragata].setBackground(cor);
-                        mp1[lFragata][cFragata + 1].setBackground(cor);
+                    if (this.mp1[lFragata][cFragata].getBackground().getRed() == 255
+                            && this.mp1[lFragata][cFragata + 1].getBackground().getRed() == 255
+                            && this.mp1[lFragata][cFragata - 1].getBackground().getRed() == 255) {
+                        this.mp1[lFragata][cFragata - 1].setBackground(cor);
+                        this.mp1[lFragata][cFragata].setBackground(cor);
+                        this.mp1[lFragata][cFragata + 1].setBackground(cor);
                     } else {
-                        if (mp1[lFragata][cFragata + 1].getBackground().getRed() == 255
-                                && mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
-                                && mp1[lFragata][cFragata - 3].getBackground().getRed() == 255) {
-                            mp1[lFragata][cFragata - 1].setBackground(cor);
-                            mp1[lFragata][cFragata - 2].setBackground(cor);
-                            mp1[lFragata][cFragata - 3].setBackground(cor);
+                        if (this.mp1[lFragata][cFragata + 1].getBackground().getRed() == 255
+                                && this.mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
+                                && this.mp1[lFragata][cFragata - 3].getBackground().getRed() == 255) {
+                            this.mp1[lFragata][cFragata - 1].setBackground(cor);
+                            this.mp1[lFragata][cFragata - 2].setBackground(cor);
+                            this.mp1[lFragata][cFragata - 3].setBackground(cor);
                         } else {
                             JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
                             return;
                         }
                     }
                 } else {
-                    if (mp1[lFragata][cFragata - 1].getBackground().getRed() == 255
-                            && mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
-                            && mp1[lFragata][cFragata - 3].getBackground().getRed() == 255) {
-                        mp1[lFragata][cFragata - 1].setBackground(cor);
-                        mp1[lFragata][cFragata - 2].setBackground(cor);
-                        mp1[lFragata][cFragata - 3].setBackground(cor);
+                    if (this.mp1[lFragata][cFragata - 1].getBackground().getRed() == 255
+                            && this.mp1[lFragata][cFragata - 2].getBackground().getRed() == 255
+                            && this.mp1[lFragata][cFragata - 3].getBackground().getRed() == 255) {
+                        this.mp1[lFragata][cFragata - 1].setBackground(cor);
+                        this.mp1[lFragata][cFragata - 2].setBackground(cor);
+                        this.mp1[lFragata][cFragata - 3].setBackground(cor);
                     } else {
                         JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
                         return;
@@ -718,31 +718,31 @@ public class Jogo extends javax.swing.JFrame {
             } else {
                 //<validar pos>
                 if (lFragata < 3) {
-                    if (mp1[lFragata][cFragata - 1].getBackground().getRed() == 255
-                            && mp1[lFragata + 1][cFragata - 1].getBackground().getRed() == 255
-                            && mp1[lFragata + 2][cFragata - 1].getBackground().getRed() == 255) {
-                        mp1[lFragata][cFragata - 1].setBackground(cor);
-                        mp1[lFragata + 1][cFragata - 1].setBackground(cor);
-                        mp1[lFragata + 2][cFragata - 1].setBackground(cor);
+                    if (this.mp1[lFragata][cFragata - 1].getBackground().getRed() == 255
+                            && this.mp1[lFragata + 1][cFragata - 1].getBackground().getRed() == 255
+                            && this.mp1[lFragata + 2][cFragata - 1].getBackground().getRed() == 255) {
+                        this.mp1[lFragata][cFragata - 1].setBackground(cor);
+                        this.mp1[lFragata + 1][cFragata - 1].setBackground(cor);
+                        this.mp1[lFragata + 2][cFragata - 1].setBackground(cor);
                     } else {
-                        if (mp1[lFragata][cFragata - 1].getBackground().getRed() == 255
-                                && mp1[lFragata - 1][cFragata - 1].getBackground().getRed() == 255
-                                && mp1[lFragata - 2][cFragata - 1].getBackground().getRed() == 255) {
-                            mp1[lFragata][cFragata - 1].setBackground(cor);
-                            mp1[lFragata - 1][cFragata - 1].setBackground(cor);
-                            mp1[lFragata - 2][cFragata - 1].setBackground(cor);
+                        if (this.mp1[lFragata][cFragata - 1].getBackground().getRed() == 255
+                                && this.mp1[lFragata - 1][cFragata - 1].getBackground().getRed() == 255
+                                && this.mp1[lFragata - 2][cFragata - 1].getBackground().getRed() == 255) {
+                            this.mp1[lFragata][cFragata - 1].setBackground(cor);
+                            this.mp1[lFragata - 1][cFragata - 1].setBackground(cor);
+                            this.mp1[lFragata - 2][cFragata - 1].setBackground(cor);
                         } else {
                             JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
                             return;
                         }
                     }
                 } else {
-                    if (mp1[lFragata - 1][cFragata - 1].getBackground().getRed() == 255
-                            && mp1[lFragata - 1][cFragata - 1].getBackground().getRed() == 255
-                            && mp1[lFragata - 2][cFragata - 1].getBackground().getRed() == 255) {
-                        mp1[lFragata][cFragata - 1].setBackground(cor);
-                        mp1[lFragata - 1][cFragata - 1].setBackground(cor);
-                        mp1[lFragata - 2][cFragata - 1].setBackground(cor);
+                    if (this.mp1[lFragata - 1][cFragata - 1].getBackground().getRed() == 255
+                            && this.mp1[lFragata - 1][cFragata - 1].getBackground().getRed() == 255
+                            && this.mp1[lFragata - 2][cFragata - 1].getBackground().getRed() == 255) {
+                        this.mp1[lFragata][cFragata - 1].setBackground(cor);
+                        this.mp1[lFragata - 1][cFragata - 1].setBackground(cor);
+                        this.mp1[lFragata - 2][cFragata - 1].setBackground(cor);
                     } else {
                         JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
                         return;
@@ -752,9 +752,9 @@ public class Jogo extends javax.swing.JFrame {
 
             //<desativar botões Fragata>
             
-            Ffragata.setEnabled(false);
-            Hfragata.setEnabled(false);
-            Vfragata.setEnabled(false);
+            this.Ffragata.setEnabled(false);
+            this.Hfragata.setEnabled(false);
+            this.Vfragata.setEnabled(false);
             
         } catch (ArrayIndexOutOfBoundsException ex) {
             JOptionPane.showMessageDialog(null, "Posição já ocupada!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -811,9 +811,9 @@ public class Jogo extends javax.swing.JFrame {
 
     private void IniciarBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarBMouseClicked
         try {
-            if (Ffragata.getText().contains("Ex: A1")
-                    || FportaAvioes.getText().contains("Ex: A1")
-                    || Fcruzador.getText().contains("Ex: A1")) {
+            if (this.Ffragata.getText().contains("Ex: A1")
+                    || this.FportaAvioes.getText().contains("Ex: A1")
+                    || this.Fcruzador.getText().contains("Ex: A1")) {
                 JOptionPane.showMessageDialog(null, "Preencha todas as posições!", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             } else {
@@ -826,11 +826,11 @@ public class Jogo extends javax.swing.JFrame {
     }//GEN-LAST:event_IniciarBMouseClicked
 
     private void closeBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeBMouseEntered
-        closeB.setForeground(Color.red);
+        this.closeB.setForeground(Color.red);
     }//GEN-LAST:event_closeBMouseEntered
 
     private void closeBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeBMouseExited
-        closeB.setForeground(Color.white);
+        this.closeB.setForeground(Color.white);
     }//GEN-LAST:event_closeBMouseExited
 
     private void closeBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeBMouseClicked
@@ -848,30 +848,30 @@ public class Jogo extends javax.swing.JFrame {
     }//GEN-LAST:event_FfragataActionPerformed
 
     private void FportaAvioesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FportaAvioesMouseClicked
-        if (FportaAvioes.getText().contains("Ex: A1")) {
-            FportaAvioes.setText(null);
-            FportaAvioes.setForeground(Color.BLACK);
+        if (this.FportaAvioes.getText().contains("Ex: A1")) {
+            this.FportaAvioes.setText(null);
+            this.FportaAvioes.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_FportaAvioesMouseClicked
 
     private void FfragataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FfragataMouseClicked
-        if (Ffragata.getText().contains("Ex: A1")) {
-            Ffragata.setText(null);
-            Ffragata.setForeground(Color.BLACK);
+        if (this.Ffragata.getText().contains("Ex: A1")) {
+            this.Ffragata.setText(null);
+            this.Ffragata.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_FfragataMouseClicked
 
     private void FcruzadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FcruzadorMouseClicked
-        if (Fcruzador.getText().contains("Ex: A1")) {
-            Fcruzador.setText(null);
-            Fcruzador.setForeground(Color.BLACK);
+        if (this.Fcruzador.getText().contains("Ex: A1")) {
+            this.Fcruzador.setText(null);
+            this.Fcruzador.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_FcruzadorMouseClicked
 
     private void FataqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FataqueMouseClicked
-        if (Fataque.getText().equalsIgnoreCase("Ex: A1")) {
-            Fataque.setText(null);
-            Fataque.setForeground(Color.BLACK);
+        if (this.Fataque.getText().equalsIgnoreCase("Ex: A1")) {
+            this.Fataque.setText(null);
+            this.Fataque.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_FataqueMouseClicked
 
