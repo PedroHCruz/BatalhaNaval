@@ -335,7 +335,7 @@ public class Jogo extends javax.swing.JFrame {
         posInicialtxt.setBounds(670, 10, 151, 26);
 
         Fcruzador.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Fcruzador.setForeground(new java.awt.Color(102, 102, 102));
+        Fcruzador.setForeground(new java.awt.Color(51, 51, 51));
         Fcruzador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Fcruzador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -360,7 +360,7 @@ public class Jogo extends javax.swing.JFrame {
         fragatatxt.setBounds(560, 80, 151, 26);
 
         FportaAvioes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        FportaAvioes.setForeground(new java.awt.Color(102, 102, 102));
+        FportaAvioes.setForeground(new java.awt.Color(51, 51, 51));
         FportaAvioes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         FportaAvioes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -376,7 +376,7 @@ public class Jogo extends javax.swing.JFrame {
         FportaAvioes.setBounds(690, 50, 110, 20);
 
         Ffragata.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Ffragata.setForeground(new java.awt.Color(102, 102, 102));
+        Ffragata.setForeground(new java.awt.Color(51, 51, 51));
         Ffragata.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Ffragata.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -530,7 +530,7 @@ public class Jogo extends javax.swing.JFrame {
         Fundo.add(AtacarB);
         AtacarB.setBounds(640, 390, 160, 30);
 
-        Fataque.setForeground(new java.awt.Color(102, 102, 102));
+        Fataque.setForeground(new java.awt.Color(51, 51, 51));
         Fataque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FataqueMouseClicked(evt);
