@@ -6,6 +6,8 @@ package batalhanaval;
 
 import java.awt.Color;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -647,7 +649,6 @@ public class Jogo extends javax.swing.JFrame {
             String LcFragata = pFragata.substring(0, 1);
             String LlFragata = pFragata.substring(1, pFragata.length());
 
-            
             String LcCruzador = pCruzador.substring(0, 1);
             String LlCruzador = pCruzador.substring(1, pCruzador.length());
 
@@ -1195,7 +1196,6 @@ public class Jogo extends javax.swing.JFrame {
             }
         } catch (StringIndexOutOfBoundsException ex) {
             JOptionPane.showMessageDialog(this, "Preencha todas as posições corretamente!", "Error", JOptionPane.ERROR_MESSAGE);
-
 
             return;
         }
